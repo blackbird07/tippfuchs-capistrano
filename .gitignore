@@ -1,4 +1,4 @@
 .project
 
-config/deploy/*/database.yml.erb
-config/deploy/*/application.yml.erb
+**/database.yml.erb
+**/application.yml.erb
