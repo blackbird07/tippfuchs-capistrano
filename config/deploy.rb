@@ -4,6 +4,7 @@
 lock '3.1.0'
 
 set :application, 'tippfuchs'
+set :deploy_user, 'deployer'
 
 # version control system
 set :scm, :git
@@ -88,7 +89,7 @@ namespace :deploy do
   # only allow a deploy with passing tests to deployed
   before :deploy, "deploy:run_tests"
   # compile assets locally then rsync
-  #after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
 end
 
