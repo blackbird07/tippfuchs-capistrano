@@ -24,7 +24,17 @@ deploying!*
 set :application, 'tippfuchs'
 set :deploy_user, 'deployer'
 set :repo_url,    'git@github.com:emrass/tippfuchs-sandbox.git'
+```
 
+When you are finished setting up the variables, run the following commands in order:
+```
+bundle exec cap <stage> deploy:setup_config
+
+# for development, cap deploy is not required -> just setup DB
+bundle exec cap <development> postgresql:setup
+
+# otherwise, simply run, this will also setup the DB
+bundle exec cap <stage> deploy
 ```
 
 Author
