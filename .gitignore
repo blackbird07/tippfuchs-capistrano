@@ -2,3 +2,5 @@
 
 **/database.yml.erb
 **/application.yml.erb
+**/ssl_cert.crt
+**/ssl_cert.key

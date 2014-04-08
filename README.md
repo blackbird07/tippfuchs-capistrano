@@ -16,7 +16,16 @@ How to Use
 git clone https://github.com/emrass/tippfuchs-capistrano.git
 ```
 
-Then copy the files into your rails root and adjust the variables.
+Then copy the files into your rails root and adjust the variables if required.
+*Make sure to adjust the server IP address in config/production.rb before
+deploying!*
+
+```
+set :application, 'tippfuchs'
+set :deploy_user, 'deployer'
+set :repo_url,    'git@github.com:emrass/tippfuchs-sandbox.git'
+
+```
 
 Author
 ------
