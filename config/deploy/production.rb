@@ -8,6 +8,8 @@ set :branch,    'master'
 # Also provides quick sanity checks when looking at filepaths.
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
+set :deploy_to,     "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
+
 # Nginx
 set :enable_ssl, true
 set :nginx_server_name, 'tippfuchs.de tippfuchs.com bet-fox.com'

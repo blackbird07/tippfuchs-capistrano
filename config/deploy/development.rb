@@ -6,6 +6,8 @@ set :branch,    'master'
 
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
+set :deploy_to,     "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
+
 # Nginx
 set :enable_ssl, true
 set :nginx_server_name, 'tippfuchs.dev'

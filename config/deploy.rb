@@ -7,7 +7,6 @@ set :application, 'tippfuchs'
 set :deploy_user, 'deployer'
 # full_app_name is only known at runtime - use custom substituion in
 # lib/capistrano/substitute_strings.rb
-set :deploy_to,   "/home/#{fetch(:deploy_user)}/apps/{{full_app_name}}"
 
 # version control system
 set :scm,         :git
@@ -68,12 +67,12 @@ set(:symlinks, [
   },
   {
     source: "log_rotation",
-   link:    "/etc/logrotate.d/{{full_app_name}}"
-  },
-  {
-    source: "monit",
-    link:   "/etc/monit/conf.d/{{full_app_name}}.conf"
-  }
+    link:    "/etc/logrotate.d/{{full_app_name}}"
+  }#,
+  #{
+  #  source: "monit",
+  #  link:   "/etc/monit/conf.d/{{full_app_name}}.conf"
+  #}
 ])
 
 namespace :deploy do
