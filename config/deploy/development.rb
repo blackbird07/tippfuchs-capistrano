@@ -8,6 +8,8 @@ set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 
 set :deploy_to,     "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
 
+set :development_vagrant, true
+
 # Nginx
 set :enable_ssl, true
 set :nginx_server_name, 'tippfuchs.dev'

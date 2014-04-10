@@ -62,6 +62,7 @@ set(:symlinks, [
     link:   "/etc/nginx/sites-enabled/{{full_app_name}}"
   },
   {
+    # gives us access to service unicorn_<full_app_name> start|restart|stop|...
     source: "unicorn_init.sh",
     link:   "/etc/init.d/unicorn_{{full_app_name}}"
   },
