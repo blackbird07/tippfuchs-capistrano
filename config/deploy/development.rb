@@ -17,3 +17,8 @@ set :nginx_enable_spdy, false
 
 # Unicorn (+ Monit)
 set :unicorn_worker_count, 1
+
+# Database
+set :postgresql_user,     "#{fetch(:application)}_#{fetch(:stage)}"
+set :postgresql_database, "#{fetch(:application)}_#{fetch(:stage)}"
+set :postgresql_password, "#{fetch(:application)}_#{fetch(:stage)}" # TODO: properly ask for password
