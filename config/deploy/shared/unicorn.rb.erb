@@ -1,4 +1,4 @@
-root = "<%= fetch(:development_vagrant) ? "/vagrant/" : current_path %>"
+root = "<%= fetch(:development_vagrant) ? "/vagrant" : current_path %>"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn_stderr.log"
