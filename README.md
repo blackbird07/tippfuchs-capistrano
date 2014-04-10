@@ -41,27 +41,27 @@ bundle exec cap <stage> deploy
 ### Steps to create a self-signed certificate for development:
 
   1. Generate a Private Key (enter a passphrase here, we will remove it later)
-```
-openssl genrsa -des3 -out ssl_cert.key 1024
-```
+     ```
+     openssl genrsa -des3 -out ssl_cert.key 1024
+     ```
 
   2. Generate a Certificate Signing Request (leave the password empty)
-```
-openssl req -new -key ssl_cert.key -out ssl_cert.csr
-```
+     ```
+     openssl req -new -key ssl_cert.key -out ssl_cert.csr
+     ```
 
   3. Remove Passphrase from Key
 
-```
-cp ssl_cert.key ssl_cert.key.org
-openssl rsa -in ssl_cert.key.org -out ssl_cert.key
-```
+     ```
+     cp ssl_cert.key ssl_cert.key.org
+     openssl rsa -in ssl_cert.key.org -out ssl_cert.key
+     ```
 
   4. Generating a Self-Signed Certificate
 
-```
-openssl x509 -req -days 9999 -in ssl_cert.csr -signkey ssl_cert.key -out ssl_cert.crt
-```
+     ```
+     openssl x509 -req -days 9999 -in ssl_cert.csr -signkey ssl_cert.key -out ssl_cert.crt
+     ```
 
 ### Disclaimer
 
