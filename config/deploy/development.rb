@@ -12,7 +12,7 @@ set :development_vagrant, true
 
 # Nginx
 set :enable_ssl, true
-set :nginx_server_name, 'tippfuchs.dev'
+set :nginx_server_name, '*.tippfuchs.dev tippfuchs.dev'
 set :nginx_enable_spdy, false
 
 # Unicorn (+ Monit)

@@ -12,7 +12,7 @@ set :deploy_to,     "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
 
 # Nginx
 set :enable_ssl, true
-set :nginx_server_name, 'tippfuchs.de tippfuchs.com bet-fox.com'
+set :nginx_server_name, '*.tippfuchs.de tippfuchs.de *.tippfuchs.com tippfuchs.com *.bet-fox.com bet-fox.com'
 set :nginx_enable_spdy, true
 
 # Unicorn (+ Monit)

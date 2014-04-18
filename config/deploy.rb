@@ -83,6 +83,11 @@ namespace :deploy do
   before :deploy, 'deploy:run_tests'      # only allow a deploy when tests pass
   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
+  
+  after 'deploy:setup_config', 'nginx:reload'
+  # after 'deploy:setup_config', 'monit:restart'
+  
+  after 'deploy:publishing', 'deploy:restart'
 end
 
 # Default value for :log_level is :debug

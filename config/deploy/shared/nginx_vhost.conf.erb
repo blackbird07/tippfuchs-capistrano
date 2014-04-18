@@ -7,7 +7,7 @@ upstream unicorn {
 <% if fetch(:enable_ssl) %>
 # http-redirects to https; even if using hsts;
 server {
-  listen              80 default_server;
+  listen              80;
   server_name         <%= fetch(:nginx_server_name) %>;
   
   rewrite ^ https://$server_name$request_uri? permanent;
@@ -18,7 +18,7 @@ server {
   }
 }
 server {
-  listen               443 ssl<% if fetch(:nginx_enable_spdy) %> spdy<% end %> default_server;
+  listen               443 ssl<% if fetch(:nginx_enable_spdy) %> spdy<% end %>;
   server_name          <%= fetch(:nginx_server_name) %>;
   root                 <%= fetch(:deploy_to) %>/current/public;
   
